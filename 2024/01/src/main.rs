@@ -9,7 +9,7 @@ struct Args {
     part: usize,
 
     #[arg()]
-    count: PathBuf,
+    file_name: PathBuf,
 }
 
 fn part_1(mut left: Vec<i32>, mut right: Vec<i32>) {
@@ -34,10 +34,7 @@ fn part_2(left: Vec<i32>, right: Vec<i32>) {
 }
 
 fn main() {
-    let Args {
-        part,
-        count: file_name,
-    } = Args::parse();
+    let Args { part, file_name } = Args::parse();
 
     let content = fs::read_to_string(file_name).expect("failed to read file");
 
